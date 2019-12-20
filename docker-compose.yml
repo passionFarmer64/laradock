@@ -204,6 +204,7 @@ services:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2375
         - FAKETIME=${PHP_FPM_FAKETIME}
+        - TZ=${WORKSPACE_TIMEZONE}
       depends_on:
         - workspace
       networks:
@@ -287,6 +288,8 @@ services:
       networks:
         - frontend
         - backend
+      environment:
+        - TZ=${WORKSPACE_TIMEZONE}
 
 ### Blackfire ########################################
     blackfire:

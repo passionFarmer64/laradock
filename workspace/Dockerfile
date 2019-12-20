@@ -312,7 +312,9 @@ ARG INSTALL_XDEBUG=false
 
 RUN if [ ${INSTALL_XDEBUG} = true ]; then \
     # Load the xdebug extension only with phpunit commands
-    apt-get install -y php${LARADOCK_PHP_VERSION}-xdebug && \
+    # apt-get install -y php${LARADOCK_PHP_VERSION}-xdebug && \
+    # [manual] replace ↑ with ↓
+    apt-get update && apt-get install -y php${LARADOCK_PHP_VERSION}-xdebug && \
     sed -i 's/^;//g' /etc/php/${LARADOCK_PHP_VERSION}/cli/conf.d/20-xdebug.ini \
 ;fi
 
@@ -646,7 +648,10 @@ ENV YARN_VERSION ${YARN_VERSION}
 RUN if [ ${INSTALL_YARN} = true ]; then \
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && \
     if [ ${YARN_VERSION} = "latest" ]; then \
+        curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --import \
         curl -o- -L https://yarnpkg.com/install.sh | bash; \
+        # [manual] replace ↑ with ↓
+        # sudo npm i yarn -g
     else \
         curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VERSION}; \
     fi && \
@@ -956,7 +961,9 @@ USER root
 ARG INSTALL_IMAGEMAGICK=false
 
 RUN if [ ${INSTALL_IMAGEMAGICK} = true ]; then \
-    apt-get install -y imagemagick php-imagick \
+    # apt-get install -y imagemagick php-imagick \
+    # [manual] replace ↑ with ↓
+    apt-get update && apt-get install -y imagemagick php-imagick \
 ;fi
 
 ###########################################################################
