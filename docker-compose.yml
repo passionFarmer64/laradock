@@ -125,6 +125,7 @@ services:
           - https_proxy
           - no_proxy
       volumes:
+        - ./php-fpm/php${PHP_VERSION}.ini:/etc/php/${PHP_VERSION}/cli/php.ini
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
@@ -710,6 +711,8 @@ services:
         - bootstrap.memory_lock=true
         - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
         - cluster.initial_master_nodes=laradock-node
+        - TZ=${WORKSPACE_TIMEZONE}
+        - ELASTICSEARCH_HOST=${ELASTICSEARCH_HOST}
       ulimits:
         memlock:
           soft: -1
@@ -751,6 +754,8 @@ services:
       networks:
         - frontend
         - backend
+      environment:
+        - TZ=${WORKSPACE_TIMEZONE}
 
 ### Certbot #########################################
     certbot:
@@ -1578,3 +1583,24 @@ services:
         - postgres
       volumes:
         - ${DATA_PATH_HOST}/Confluence:/var/atlassian/application-data
+### TMUX ################################################
+    tmux:
+      build:
+        context: ./tmux
+      environment:
+        - TZ=${WORKSPACE_TIMEZONE}
+      networks:
+        - frontend
+        - backend
+
+### WEBGRIND ################################################
+    webgrind:
+      build:
+        context: ./webgrind
+      environment:
+        - TZ=${WORKSPACE_TIMEZONE}
+      networks:
+        - frontend
+        - backend
+      ports:
+        - "${WEBGRIND_PORT}:80"
