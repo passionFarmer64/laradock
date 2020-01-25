@@ -567,6 +567,7 @@ ARG INSTALL_NPM_GULP=false
 ARG INSTALL_NPM_BOWER=false
 ARG INSTALL_NPM_VUE_CLI=false
 ARG INSTALL_NPM_ANGULAR_CLI=false
+ARG INSTALL_NPM_NEWMEN=false
 ARG NPM_REGISTRY
 ENV NPM_REGISTRY ${NPM_REGISTRY}
 ENV NVM_DIR /home/laradock/.nvm
@@ -593,6 +594,9 @@ RUN if [ ${INSTALL_NODE} = true ]; then \
         ;fi \
         && if [ ${INSTALL_NPM_ANGULAR_CLI} = true ]; then \
         npm install -g @angular/cli \
+        ;fi \
+        && if [ ${INSTALL_NPM_NEWMEN} = true ]; then \
+        npm install -g newman \
         ;fi \
         && ln -s `npm bin --global` /home/laradock/.node-bin \
 ;fi
