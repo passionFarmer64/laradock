@@ -47,6 +47,8 @@ volumes:
     driver: ${VOLUMES_DRIVER}
   cassandra:
     driver: ${VOLUMES_DRIVER}
+  webgrind:
+    driver: ${VOLUMES_DRIVER}
 
 services:
 
@@ -1605,3 +1607,7 @@ services:
         - backend
       ports:
         - "${WEBGRIND_PORT}:80"
+      volumes:
+        - ../Project/xdebug/:/var/www/xdebug
+        # - ${DATA_PATH_HOST}/webgrind:/var/www
+        # - /var/run/docker.sock:/var/run/docker.sock
