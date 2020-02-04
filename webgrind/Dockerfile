@@ -7,8 +7,8 @@ FROM clue/webgrind:${WEBGRIND_VERSION}
 
 USER root
 
-ARG TZ=UTC
-ENV TZ ${TZ}
+# ARG TZ=UTC
+# ENV TZ ${TZ}
 
 EXPOSE 15777
 

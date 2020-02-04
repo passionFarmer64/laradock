@@ -30,7 +30,7 @@ class Webgrind_Config extends Webgrind_MasterConfig {
      */
     static $graphImageType = 'svg';
 
-    static $defaultTimezone = 'Europe/Copenhagen';
+    static $defaultTimezone = 'Asia/Taipei';
     static $dateFormat = 'Y-m-d H:i:s';
     static $defaultCostformat = 'percent'; // 'percent', 'usec' or 'msec'
     static $defaultFunctionPercentage = 90;

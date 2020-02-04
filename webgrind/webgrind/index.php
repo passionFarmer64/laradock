@@ -164,11 +164,11 @@ try {
                 shell_exec(Webgrind_Config::$pythonExecutable.' library/gprof2dot.py -n '.$showFraction
                            .' -f callgrind '.escapeshellarg(Webgrind_Config::xdebugOutputDir().$dataFile).' | '
                            .Webgrind_Config::$dotExecutable.' -T'.Webgrind_Config::$graphImageType.' -o '.escapeshellarg($filename));
-                error_log(Webgrind_Config::$pythonExecutable.' library/gprof2dot.py -n '.$showFraction
+                error_log('shell_exec--'.Webgrind_Config::$pythonExecutable.' library/gprof2dot.py -n '.$showFraction
                 .' -f callgrind '.escapeshellarg(Webgrind_Config::xdebugOutputDir().$dataFile).' | '
-                .Webgrind_Config::$dotExecutable.' -T'.Webgrind_Config::$graphImageType.' -o '.escapeshellarg($filename), 3, 'error.log');
+                .Webgrind_Config::$dotExecutable.' -T'.Webgrind_Config::$graphImageType.' -o '.escapeshellarg($filename).PHP_EOL.PHP_EOL, 3, 'error.log');
             }
-
+            error_log('filename--'.$filename.PHP_EOL.PHP_EOL, 3, 'error.log');
             if (!file_exists($filename)) {
                 $file = $filename;
                 $message = 'Unable to generate <u>'.$file.'</u> via python: <u>'.Webgrind_Config::$pythonExecutable
