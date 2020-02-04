@@ -1609,5 +1609,6 @@ services:
         - "${WEBGRIND_PORT}:80"
       volumes:
         - ../Project/xdebug/:/var/www/xdebug
+        - ../Project/CMS-API/:/var/www/CMS-API
         # - ${DATA_PATH_HOST}/webgrind:/var/www
         # - /var/run/docker.sock:/var/run/docker.sock
