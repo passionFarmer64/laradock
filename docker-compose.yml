@@ -376,8 +376,8 @@ services:
       ports:
         - "${MYSQL_PORT}:3306"
       networks:
-        - backend
-
+        backend:
+          ipv4_address: 172.26.0.8
 ### Percona ################################################
     percona:
       build:
@@ -519,7 +519,8 @@ services:
       ports:
         - "${REDIS_PORT}:6379"
       networks:
-        - backend
+        backend:
+          ipv4_address: 172.26.0.5
 
 ### Redis Cluster ##########################################
     redis-cluster:
