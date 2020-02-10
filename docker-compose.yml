@@ -214,7 +214,8 @@ services:
       depends_on:
         - workspace
       networks:
-        - backend
+        backend:
+          ipv4_address: 172.26.0.9
       links:
         - docker-in-docker
 
@@ -292,8 +293,9 @@ services:
       depends_on:
         - php-fpm
       networks:
-        - frontend
-        - backend
+        backend:
+          ipv4_address: 172.26.0.7
+        frontend:
       environment:
         - TZ=${WORKSPACE_TIMEZONE}
 
@@ -673,9 +675,9 @@ services:
       depends_on:
         - "${PMA_DB_ENGINE}"
       networks:
-        - frontend
-        - backend
-
+        backend:
+          ipv4_address: 172.26.0.3
+        frontend:
 ### Adminer ###########################################
     adminer:
       build:
@@ -1076,7 +1078,8 @@ services:
       ports:
         - 9010:9000
       networks:
-        - backend
+        backend:
+          ipv4_address: 172.26.0.2
 
 ### Gitlab ################################################
     gitlab:
@@ -1188,7 +1191,8 @@ services:
       expose:
         - 2375
       networks:
-        - backend
+        backend:
+          ipv4_address: 172.26.0.6
 
 ### NetData ################################################
     netdata:
@@ -1606,8 +1610,9 @@ services:
       environment:
         - TZ=${WORKSPACE_TIMEZONE}
       networks:
-        - frontend
-        - backend
+        backend:
+          ipv4_address: 172.26.0.11
+        frontend:
       ports:
         - "${WEBGRIND_PORT}:80"
       volumes:
