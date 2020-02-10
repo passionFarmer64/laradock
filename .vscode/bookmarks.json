@@ -13,42 +13,52 @@
 		"path": "$ROOTPATH$/docker-compose.yml",
 		"bookmarks": [
 			{
-				"line": 146,
+				"line": 54,
+				"column": 13,
+				"label": "Workspace"
+			},
+			{
+				"line": 147,
 				"column": 11,
 				"label": " PHP-FPM"
 			},
 			{
-				"line": 273,
+				"line": 274,
 				"column": 9,
 				"label": "NGINX"
 			},
 			{
-				"line": 362,
+				"line": 363,
 				"column": 9,
 				"label": "MySQL"
 			},
 			{
-				"line": 664,
+				"line": 665,
 				"column": 14,
 				"label": "phpMyAdmin"
 			},
 			{
-				"line": 714,
+				"line": 715,
 				"column": 17,
 				"label": "ElasticSearch"
 			},
 			{
-				"line": 1068,
+				"line": 1069,
 				"column": 13,
 				"label": "Portainer"
 			},
 			{
-				"line": 1184,
+				"line": 1185,
 				"column": 20,
 				"label": "Docker-in-Docker"
 			},
 			{
-				"line": 1605,
+				"line": 1209,
+				"column": 14,
+				"label": "REDISWEBUI"
+			},
+			{
+				"line": 1607,
 				"column": 12,
 				"label": "WEBGRIND"
 			}
