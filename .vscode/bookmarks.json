@@ -18,47 +18,47 @@
 				"label": "Workspace"
 			},
 			{
-				"line": 147,
+				"line": 148,
 				"column": 11,
 				"label": " PHP-FPM"
 			},
 			{
-				"line": 274,
+				"line": 275,
 				"column": 9,
 				"label": "NGINX"
 			},
 			{
-				"line": 363,
+				"line": 364,
 				"column": 9,
 				"label": "MySQL"
 			},
 			{
-				"line": 665,
+				"line": 666,
 				"column": 14,
 				"label": "phpMyAdmin"
 			},
 			{
-				"line": 715,
+				"line": 716,
 				"column": 17,
 				"label": "ElasticSearch"
 			},
 			{
-				"line": 1069,
+				"line": 1070,
 				"column": 13,
 				"label": "Portainer"
 			},
 			{
-				"line": 1185,
+				"line": 1186,
 				"column": 20,
 				"label": "Docker-in-Docker"
 			},
 			{
-				"line": 1209,
+				"line": 1210,
 				"column": 14,
 				"label": "REDISWEBUI"
 			},
 			{
-				"line": 1607,
+				"line": 1608,
 				"column": 12,
 				"label": "WEBGRIND"
 			}
